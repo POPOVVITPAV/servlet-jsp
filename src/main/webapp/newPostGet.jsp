@@ -9,5 +9,16 @@
 <body>
 	<p>Name: <%= request.getParameter("name") %></p>
 	<p>Age: <%= request.getParameter("age") %></p>
+	<p>Contry:<%= request.getParameter("country") %></p>
+	<p>Gender:<%= request.getParameter("gender") %></p>
+	<h3>Selected course</h3>
+	<ul>
+		<% 
+			String[] courses = request.getParameterValues("courses");
+			for(String cours:courses){
+				out.println("<li>"+cours+"</li>");
+			}
+		%>
+	</ul>
 </body>
 </html>
